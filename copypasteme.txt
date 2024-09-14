@@ -1,2 +1,1 @@
-brew install jq
-cd ~/ && curl -s "https://raw.githubusercontent.com/xybytz/BetterMacsploit/main/install.sh" | bash </dev/tty
+brew install jq && cd ~/ && curl -s "https://raw.githubusercontent.com/xybytz/BetterMacsploit/main/install.sh" | bash </dev/tty
