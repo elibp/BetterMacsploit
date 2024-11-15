@@ -12,19 +12,12 @@ main() {
     curl -s "https://git.raptor.fun/sellix/hwid" -o "./hwid"
     chmod +x ./hwid
     
-    local user_hwid=$(./hwid)
-    local hwid_info=$(curl -s "https://git.raptor.fun/api/whitelist?hwid=$user_hwid")
-    local hwid_resp=$(echo $hwid_info | ./jq -r ".success")
-    rm ./hwid
-    
-    if [ "$hwid_resp" != "true" ]
-    then
         echo -ne "\rEnter License Key:       \b\b\b\b\b\b"
         read input_key
 
         echo -n "Contacting Secure Api... "
         
-        local resp=$(curl -s "https://git.raptor.fun/api/sellix?key=$input_key&hwid=$user_hwid")
+        local resp=$(curl -s "typeshit")
         echo -e "Done.\n$resp"
         
         if [ "$resp" != 'Key Activation Complete!' ]
